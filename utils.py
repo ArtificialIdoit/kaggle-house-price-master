@@ -22,7 +22,7 @@ from torch.utils.data import TensorDataset
 
 def get_data(x, y, batch_size, shuffle):
     dataset = TensorDataset(x, y)
-    return DataLoader(dataset, batch_size, shuffle=shuffle, num_workers=0)#原为4,对于cpu而言进程太多会影响速度
+    return DataLoader(dataset, batch_size, shuffle=shuffle, num_workers=0)#原为4,对于cpu而言进程太多会影响速度，开销太大
 
 
 def train_model(model, x_train, y_train, x_valid, y_valid, epochs, batch_size, lr, weight_decay, use_gpu):
